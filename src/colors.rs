@@ -56,8 +56,14 @@
 //! [ex]: https://github.com/daboross/fern/blob/fern-0.6.2/examples/pretty-colored.rs
 use std::fmt;
 
+#[cfg(feature = "colored")]
 pub use colored::Color;
+#[cfg(feature = "min_colored")]
+pub use min_colored::Color;
 use log::Level;
+
+#[cfg(all(feature = "colored", feature = "min_colored"))]
+compile_error!("You cannot use both backend at same time, please choose one");
 
 /// Extension crate allowing the use of `.colored` on Levels.
 trait ColoredLogLevel {

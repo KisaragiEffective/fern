@@ -273,7 +273,7 @@ mod builders;
 mod errors;
 mod log_impl;
 
-#[cfg(feature = "colored")]
+#[cfg(any(feature = "colored", feature = "min_colored"))]
 pub mod colors;
 #[cfg(all(
     feature = "syslog-3",

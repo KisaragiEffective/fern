@@ -1,0 +1,13 @@
+[package]
+name = "min_colored"
+version = "0.1.0"
+edition = "2021"
+authors = [ "Kisaragi Marine <kisaragi.effective@gmail.com>" ]
+license = "CC0-1.0"
+description = "Compact and zero-dependency implementation for ANSI color sequence"
+keywords = ["ansi", "color", "terminal"]
+categories = ["no-std"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]

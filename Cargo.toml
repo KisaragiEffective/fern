@@ -1,7 +1,7 @@
 [package]
 name = "fern"
 # Remember to update html_root_url in src/lib.rs with each version.
-version = "0.6.2"
+version = "0.6.2-kisaragieffective-1"
 authors = ["David Ross <daboross@daboross.net>"]
 description = "Simple, efficient logging"
 edition = "2018"
@@ -20,6 +20,7 @@ include = ["Cargo.toml", "src/**/*", "tests/**/*", "examples/**/*", "LICENSE", "
 [dependencies]
 log = { version = "0.4", features = ["std"] }
 colored = { version = "1.5", optional = true }
+min_colored = { path = "./min_colored", optional = true }
 chrono = { version = "0.4", default-features = false, features = ["std", "clock"], optional = true }
 
 [target."cfg(not(windows))".dependencies]

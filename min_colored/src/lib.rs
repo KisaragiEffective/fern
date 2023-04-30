@@ -60,7 +60,7 @@ pub fn enable_virtual_terminal() {
     let stdout_handle = unsafe { GetStdHandle(STD_OUTPUT_HANDLE).expect("stdout is not associated with this process") };
     let mut mode = MaybeUninit::uninit();
     let get_console_mode = unsafe { GetConsoleMode(stdout_handle, mode.as_mut_ptr()) };
-    if !get_console_mode {
+    if !get_console_mode.as_bool() {
         return
     }
     // SAFETY: GetConsoleMode succeeded, so `dest` must be overwritten.

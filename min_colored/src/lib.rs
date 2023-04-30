@@ -53,7 +53,7 @@ impl Color {
     }
 }
 
-#[cfg(windows, feature = "windows_virtual_terminal_sequence")]
+#[cfg(all(windows, feature = "windows_virtual_terminal_sequence"))]
 pub fn enable_virtual_terminal() {
     use windows::Win32::System::Console::{GetStdHandle, GetConsoleMode, SetConsoleMode};
 

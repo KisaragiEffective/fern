@@ -162,9 +162,13 @@ impl ColoredLevelConfig {
     /// [`ColoredLevelConfig::default`]: #method.default
     #[inline]
     pub fn new() -> Self {
-        #[cfg(windows)]
+        #[cfg(all(feature = "colored", windows))]
         {
             let _ = colored::control::set_virtual_terminal(true);
+        }
+        #[cfg(all(feature = "min_colored", windows))]
+        {
+            let _ = min_colored::windows::enable_virtual_terminal();
         }
         Self::default()
     }

@@ -168,7 +168,7 @@ impl ColoredLevelConfig {
         }
         #[cfg(all(feature = "min_colored", windows))]
         {
-            let _ = min_colored::windows::enable_virtual_terminal();
+            let _ = min_colored::enable_virtual_terminal();
         }
         Self::default()
     }

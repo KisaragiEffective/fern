@@ -1,3 +1,9 @@
+# Fork notice
+
+***This repository is no longer maintained. Please use the [upstream repository](https://github.com/daboross/fern) instead.***
+
+---
+
 fern
 ====
 [![crates.io version badge][cratesio-badge]][fern-crate]
